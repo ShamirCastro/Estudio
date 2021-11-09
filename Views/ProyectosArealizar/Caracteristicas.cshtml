@@ -1,0 +1,26 @@
+@model Estudio.Models.Proyectos
+<h1>Caracteristicas</h1>
+
+  
+<div class="container">
+  <div class="row">
+      <div class="col-6" style="text-align: left;">
+        <h2>@Html.DisplayFor(modelItem => Model.nombre)</h2>
+        <p>@Html.DisplayFor(modelItem => Model.descripcion)</p>            
+        <p style="color:#000000" class="card-text">Estado: @Html.DisplayFor(modelItem => Model.estado)</p>
+        <p style="color:#000000"class="card-text">Precio: $@Html.DisplayFor(modelItem => Model.precio)</p>          
+            
+      </div>
+      <div class="col-4" style="text-align: right ;">
+        
+            <img src="@Model.imagen" alt="@Model.imagen" width="546px" height="340px">
+        
+            <br>
+            <br>
+                 
+      </div>      
+      
+      
+   </div>
+   
+</div>

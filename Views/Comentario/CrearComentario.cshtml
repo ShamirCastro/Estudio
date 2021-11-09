@@ -1,0 +1,11 @@
+@model Estudio.Models.Comentarios
+
+<form asp-controller="Comentario" asp-action="CrearComentario">
+     
+     <textarea asp-for="comentario" placeholder="Porfavor comente aqui" class="form-control" ></textarea>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-secondary">Comentar</button> 
+    </div>              
+</form>
+<h1>@ViewData["Message"]</h1>

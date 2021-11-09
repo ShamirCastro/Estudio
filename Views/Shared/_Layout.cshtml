@@ -1,0 +1,139 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Estudio_de_Arquitectura_J_W</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/image/Logo.jpg" width="45px" height="45px" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                                               
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Nosotros">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ProyectosArealizar" asp-action="ProyectosRealizar">Proyectos a realizar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ProyectosArealizar" asp-action="ProyectosRealizados">Proyectos realizados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Contacto" asp-action="Contacto">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Encuesta">Encuesta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Comentario" asp-action="MostrarComentarios">Comentarios</a>
+                        </li>
+                        @if(User.Identity.IsAuthenticated){
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Cuenta" asp-action="CerrarSesion">Cerrar Sesion</a>
+                        </li>       
+                        
+                        <li class="nav-item" style="text-align: right;">
+                            Bienvenido Admin 
+                        </li>
+                        }
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Rocoto2"
+  agent-id="0958af28-027d-4968-8d93-2d8f4f6bd623"
+  language-code="es"
+></df-messenger>
+
+    
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted ">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col">
+                <h5 style="text-align: left;">&copy; J&W - Planos - Consultoria</h5>
+                <p style="font-size: small; text-align: left;">En <strong>ESTUDIO DE ARQUITECTURA J&W</strong> desarrollamos y construimos Proyectos Arquitectónicos por encima de las expectativas de nuestros clientes garantizando Satisfacción de servicio, funcionalidad, alta calidad y timepo de entrega</p>
+                 
+                </div>
+                <div class="col">
+                <h5 style="text-align: center;">Servicios</h5>
+                <ul class="list">
+                    <li>Diseño Arquitectonico</li>
+                    <li>Construccion</li>
+                    <li>Consultoria</li>
+                    <li>Saneamiento fisico y legal</li> 
+                </ul>
+                </div>
+                <div class="col">
+                <h5 style="text-align: center;">Contactenos</h5>
+                <ul class="list">
+                    <li>+54 987456321</li>
+                    <li>+54 741258963</li> 
+                    <li>arqwjp.12@gmail.com</li>
+                </ul>
+                </div>
+                <div class="col">
+                <h5 style="text-align: center;">Redes Sociales</h5>
+                <ul class="list">
+                    <dt>
+                        <a href="https://www.facebook.com/WJPLANOS"><img src="https://image.similarpng.com/very-thumbnail/2020/04/Facebook-logo-modern-paint-splash-social-media-png.png" width="50px" height="50px" alt="">
+                        </a>
+                        Facebook                        
+                    </dt>
+                    <dt>
+                        <a href="https://www.instagram.com/arquitectos_jw/?hl=es">
+                        <img src="https://eltallerdehector.com/wp-content/uploads/2021/06/Instagram-Logo-png.png" width="50px" height="50px" alt="">
+                        </a>
+                        Instagram</dt> 
+                    <dt><img src="https://i.pinimg.com/236x/48/f3/29/48f329d06faaaf946fea85895a735358.jpg" width="50px" height="50px" alt="">
+                        Whatsapp</dt>
+                </ul>
+                </div> 
+                <div class="col">
+                <h5 style="text-align: center;">Ubiquenos</h5>
+                <ul>
+                    <dd>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7803.3842545329!2d-77.10618746693419!3d-12.064691324421883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6fe528c9ad61f62b!2sESTUDIO%20DE%20ARQUITECTURA%20J%26W!5e0!3m2!1ses-419!2spe!4v1633314411932!5m2!1ses-419!2spe" width="200px" height="200px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </dd>
+                </ul>
+                </div>      
+            </div>
+            
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

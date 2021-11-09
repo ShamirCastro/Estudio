@@ -1,0 +1,41 @@
+@model Estudio.Models.Proyectos
+<form asp-controller="ProyectosArealizar" asp-action="CrearProyectoRealizar" class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Nombre</label>
+    <input asp-for="nombre" type="Name" class="form-control" id="inputEmail4" placeholder="Inserte Nombre Aqui">
+  </div>
+
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Imagen</label>
+    <input asp-for="imagen" class="form-control" placeholder="Inserte URL de imagen Aqui">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Descripcion</label>
+    <input asp-for="descripcion" type="description" class="form-control" placeholder="Inserte descripcion Aqui">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Lugar</label>
+    <input asp-for="lugar" type="lugar" class="form-control" placeholder="Inserte la locacion Aqui">
+  </div>
+  
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Precio</label>
+    <input asp-for="precio" class="form-control" placeholder="Inserte aqui el Precio">
+  </div>
+  <br>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Estado</label>
+  <select class="form-select" asp-for="estado" aria-label="Default select example">
+    <option selected>Seleccione el estado</option>
+    <option value="En Proceso">En Proceso</option>
+    <option value="Terminado">Terminado</option>
+  </select>
+  </div>
+  <br>
+  <br>
+  <div class="col-12">
+    <button type="submit" class="btn btn-secondary">Subir Proyecto</button>
+  </div>
+</form>

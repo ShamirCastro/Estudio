@@ -1,0 +1,86 @@
+@model IEnumerable<Estudio.Models.Proyectos>
+
+<div class="container">
+
+  @if(TempData["mensaje"] != null){
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        @TempData["mensaje"]
+        <button type="button" class="close" data-dismiss="alert" arial-label="Close">
+          <span aria-hidden="true">&times;</span>
+
+        </button>
+    </div>
+  }
+
+</div>
+
+
+<form asp-action="ProyectosRealizar" method="GET">
+
+
+  <div class="search-bar-input">
+    <p> 
+      <input type="text" class="form-control" placeholder="Buscar" name="searchString" value="@ViewData["CurrentFilter"]">
+      <button class="btn btn-default" value="Buscar"><img src="https://image.flaticon.com/icons/png/512/56/56552.png" width="40" height="40" alt=""></button>
+      
+      <button class="btn btn-primary"><a asp-action="ProyectosRealizar"  style="color: white;"> Todos los Proyectos</a></button>
+    </p>
+  </div>
+</form>
+@if(User.Identity.IsAuthenticated){
+<div>
+<a asp-action="CrearProyectoRealizar"><button type="button" class="btn btn-info">Añadir Proyecto</button></a>
+</div>
+}
+<br>
+<div class="row">
+      <div class="col">
+        <div id="products" class="mb-3">
+          <div class="row">            
+            @foreach (var item in Model) {
+            @if(item.estado == "Terminado"){
+            <div class="col-sm-4">
+              
+                <div class="card">                  
+                     <img class="card-img-top" width="200" height="400"
+                       src="@item.imagen" alt="@item.imagen"  />       
+                
+                <div class="card-body">
+                  <h5 class="card-title">@Html.DisplayFor(modelItem => item.nombre)</h5>
+                  <p class="card-text" >Lugar: @Html.DisplayFor(modelItem => item.lugar)</p>
+                  <p class="card-text" >Estado: @Html.DisplayFor(modelItem => item.estado)</p>
+                  <p class="card-text" >Desde: $@Html.DisplayFor(modelItem => item.precio)</p>
+                  @if(!User.Identity.IsAuthenticated){
+                  <a asp-action="Caracteristicas" asp-route-id="@item.id"><button type="button" class="btn btn-info">Caracteristicas</button></a>
+                  }else{
+                    <a asp-action="EditarProyectoRealizar" asp-route-id="@item.id"><button type="button" class="btn btn-info">Editar Proyecto</button></a>
+                    <a asp-action="Caracteristicas" asp-route-id="@item.id"><button type="button" class="btn btn-info">Caracteristicas</button></a>
+                  }
+                 </div> 
+                </div>              
+            </div>}
+            }            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<br>
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <a class="page-link">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <a class="page-link" href="#">2</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>

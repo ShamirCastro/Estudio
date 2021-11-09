@@ -1,0 +1,48 @@
+@model List<DiseñoArquitectonico>
+<h1 style="text-align: center;">Nuestros Servicios</h1>
+<p style="text-align: center;">J&W es un estudio de Arquitectos profesionales especializados en diseños arquitectonicos, cumpliendo las expectativas de nuestros clientes, 
+    garantizando satisfaccion al bienestar y calidad de vida de ser una empresa comprometida, crea experiencias unicas a los clientes</p>
+<hr size="2px" color="black"/>
+
+<h1 style="text-align: left ;">Diseño Arquitectónico</h1>
+<div>
+
+</div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-6" style="text-align: left;">
+        @foreach (var item in Model){
+        <p>@Html.DisplayFor(modelItem => item.descripcionDA)</p>
+            @if(User.Identity.IsAuthenticated){
+            <a asp-action="ModificarDiseño" asp-route-id="@item.id">
+              <button type="button" class="btn btn-dark" style="background-color: red;">  Modificar Descripcion e imagen 
+              </button>
+            </a>
+            }
+        <h2>Proceso de Diseño Arquitectonico</h2>
+          @foreach (var procesoDA in item.procesoDA){
+          <ul><li> @procesoDA.procesoDA</li></ul>
+                      
+          }
+          
+        }     
+      </div>
+      <div class="col-4" style="text-align: right ;">
+        @foreach (var item in Model){
+            <img src="@item.imagenDA" alt="" width="546px" height="340px">
+        }
+            <br>
+            <br>
+                 
+        <a asp-action="Contacto" asp-controller="Contacto">
+          <button type="button" class="btn btn-dark" style="background-color: red;">  
+            Adquirir Servicios 
+          </button>
+        </a>
+      </div>      
+      
+      
+   </div>
+   
+</div>
