@@ -65,8 +65,12 @@ namespace Estudio.Controllers
             _context.Add(objProyect);
             _context.SaveChanges();
             TempData["mensaje"] = "El proyecto se ha subido correctamente";
-            return RedirectToAction("ProyectosRealizar");
             
+            if(objProyect.estado == "Terminado"){
+                return RedirectToAction("ProyectosRealizados");
+            }else{
+                return RedirectToAction("ProyectosRealizar");
+            }
         }
 
         [HttpGet]
