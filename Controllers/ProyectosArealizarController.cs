@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Estudio.Models;
 using Estudio.Data;
 using Microsoft.EntityFrameworkCore;
+using PagedList;
 
 
 namespace Estudio.Controllers
@@ -28,26 +29,28 @@ namespace Estudio.Controllers
         {
             ViewData["CurrentFilter"]=searchString;
             var proyectos = from e in _context.Proyectos select e;
+            
+            
  
             if (!String.IsNullOrEmpty(searchString) ){
                 proyectos = proyectos.Where(e=>e.nombre.Contains(searchString) || e.descripcion.Contains(searchString) || e.lugar.Contains(searchString));
             }
-            
-            
+           
             return View(await proyectos.ToListAsync());
             
         }
-        public async Task<IActionResult> ProyectosRealizar(string searchString)
+        public async Task<IActionResult> ProyectosRealizar(string searchString,int? i)
         {
             ViewData["CurrentFilter"]=searchString;
             var proyectos = from o in _context.Proyectos select o;
- 
+
             if (!String.IsNullOrEmpty(searchString) ){
                 proyectos = proyectos.Where(o=>o.nombre.Contains(searchString) || o.descripcion.Contains(searchString) || o.lugar.Contains(searchString));
             }
             
             
             return View(await proyectos.ToListAsync());
+            
             
         }
         
