@@ -27,10 +27,10 @@ namespace Estudio.Controllers
         public async Task<IActionResult> ProyectosRealizados(string searchString)
         {
             ViewData["CurrentFilter"]=searchString;
-            var proyectos = from o in _context.Proyectos select o;
+            var proyectos = from e in _context.Proyectos select e;
  
             if (!String.IsNullOrEmpty(searchString) ){
-                proyectos = proyectos.Where(o=>o.nombre.Contains(searchString) || o.descripcion.Contains(searchString));
+                proyectos = proyectos.Where(e=>e.nombre.Contains(searchString) || e.descripcion.Contains(searchString) || e.lugar.Contains(searchString));
             }
             
             
@@ -43,7 +43,7 @@ namespace Estudio.Controllers
             var proyectos = from o in _context.Proyectos select o;
  
             if (!String.IsNullOrEmpty(searchString) ){
-                proyectos = proyectos.Where(o=>o.nombre.Contains(searchString) || o.descripcion.Contains(searchString));
+                proyectos = proyectos.Where(o=>o.nombre.Contains(searchString) || o.descripcion.Contains(searchString) || o.lugar.Contains(searchString));
             }
             
             

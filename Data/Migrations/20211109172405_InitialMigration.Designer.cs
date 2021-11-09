@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Estudio.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211109170602_InitialMigration")]
+    [Migration("20211109172405_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -182,15 +182,12 @@ namespace Estudio.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("estado")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("imagen")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("lugar")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("nombre")

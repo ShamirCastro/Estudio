@@ -109,11 +109,11 @@ namespace Estudio.Data.Migrations
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     nombre = table.Column<string>(type: "text", nullable: false),
-                    imagen = table.Column<string>(type: "text", nullable: false),
+                    imagen = table.Column<string>(type: "text", nullable: true),
                     descripcion = table.Column<string>(type: "text", nullable: false),
-                    lugar = table.Column<string>(type: "text", nullable: false),
+                    lugar = table.Column<string>(type: "text", nullable: true),
                     precio = table.Column<decimal>(type: "numeric", nullable: false),
-                    estado = table.Column<string>(type: "text", nullable: false)
+                    estado = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

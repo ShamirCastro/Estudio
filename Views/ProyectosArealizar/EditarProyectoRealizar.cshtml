@@ -2,34 +2,34 @@
 <form asp-controller="ProyectosArealizar" asp-action="EditarProyectoRealizar" class="row g-3">
   <div class="col-md-6">
     <label for="name" class="form-label">Nombre</label>
-    <input asp-for="nombre" type="Name" class="form-control" id="inputEmail4" placeholder="Inserte Nombre Aqui">
+    <input asp-for="nombre" type="Name" class="form-control" id="inputEmail4" placeholder="Inserte Nombre Aqui" required>
   </div>
 
   <div class="col-12">
     <label for="image" class="form-label">Imagen</label>
-    <input asp-for="imagen" class="form-control" placeholder="Inserte URL de imagen Aqui">
+    <input asp-for="imagen" class="form-control" placeholder="Inserte URL de imagen Aqui" required>
   </div>
 
   <div class="col-md-6">
     <label for="description" class="form-label">Descripcion</label>
-    <input asp-for="descripcion" type="description" class="form-control" placeholder="Inserte descripcion Aqui">
+    <input asp-for="descripcion" type="description" class="form-control" placeholder="Inserte descripcion Aqui" required>
   </div>
 
   <div class="col-md-6">
     <label for="location" class="form-label">Lugar</label>
-    <input asp-for="lugar" type="lugar" class="form-control" placeholder="Inserte la locacion Aqui">
+    <input asp-for="lugar" type="lugar" class="form-control" placeholder="Inserte la locacion Aqui" required>
   </div>
   
 
   <div class="col-12">
     <label for="price" class="form-label">Precio</label>
-    <input asp-for="precio" class="form-control" placeholder="Inserte aqui el Precio">
+    <input asp-for="precio" class="form-control" placeholder="Inserte aqui el Precio" required>
   </div>
 
   <br>
   <div class="col-12">
     <label for="estate" class="form-label">Estado</label>
-  <select class="form-select" asp-for="estado" aria-label="Default select example">
+  <select class="form-select" asp-for="estado" aria-label="Default select example" >
     <option selected>Seleccione el estado</option>
     <option value="En Proceso">En Proceso</option>
     <option value="Terminado">Terminado</option>

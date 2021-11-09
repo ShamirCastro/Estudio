@@ -2,27 +2,27 @@
 <form asp-controller="ProyectosArealizar" asp-action="CrearProyectoRealizar" class="row g-3">
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Nombre</label>
-    <input asp-for="nombre" type="Name" class="form-control" id="inputEmail4" placeholder="Inserte Nombre Aqui">
+    <input asp-for="nombre" type="Name" class="form-control" id="inputEmail4" placeholder="Inserte Nombre Aqui" required>
   </div>
 
   <div class="col-12">
     <label for="inputAddress" class="form-label">Imagen</label>
-    <input asp-for="imagen" class="form-control" placeholder="Inserte URL de imagen Aqui">
+    <input asp-for="imagen" class="form-control" placeholder="Inserte URL de imagen Aqui" required>
   </div>
 
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Descripcion</label>
-    <input asp-for="descripcion" type="description" class="form-control" placeholder="Inserte descripcion Aqui">
+    <input asp-for="descripcion" type="description" class="form-control" placeholder="Inserte descripcion Aqui" required>
   </div>
 
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Lugar</label>
-    <input asp-for="lugar" type="lugar" class="form-control" placeholder="Inserte la locacion Aqui">
+    <input asp-for="lugar" type="lugar" class="form-control" placeholder="Inserte la locacion Aqui" required>
   </div>
   
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Precio</label>
-    <input asp-for="precio" class="form-control" placeholder="Inserte aqui el Precio">
+    <input asp-for="precio" class="form-control" placeholder="Inserte aqui el Precio" required>
   </div>
   <br>
   <div class="col-12">

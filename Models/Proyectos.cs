@@ -10,22 +10,19 @@ namespace Estudio.Models
     {
         public int id {get;set;}
 
-        [Required(ErrorMessage = "Porfavor ingrese el nombre")]
+        [Required]
         public string nombre{get;set;}
 
-        [Required(ErrorMessage = "Porfavor ingrese la url de la imagen")]
+        
         public string imagen{get;set;}
 
-        [Required(ErrorMessage = "Porfavor ingrese la descripcion")]
+        [Required]
         public string descripcion{get;set;}
 
-        [Required(ErrorMessage = "Porfavor ingrese la locacion del proyecto")]
+        
         public string lugar{get;set;}
 
-        [Required(ErrorMessage = "Porfavor ingrese el precio del proyecto")]
         public decimal precio{get;set;}
-
-        [Required(ErrorMessage = "Porfavor ingrese el estado del proyecto")]
         public string estado{get;set;}
     }
 }

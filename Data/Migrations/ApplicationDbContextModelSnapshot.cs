@@ -180,15 +180,12 @@ namespace Estudio.Data.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("estado")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("imagen")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("lugar")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("nombre")
