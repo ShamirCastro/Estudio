@@ -102,7 +102,11 @@ namespace Estudio.Controllers
                 _context.SaveChanges();
                 
                 TempData["mensaje"] = "El proyecto se ha actualizado correctamente";
-                return RedirectToAction("ProyectosRealizar");
+                if(proyecto.estado == "Terminado"){
+                    return RedirectToAction("ProyectosRealizados");
+                }else{
+                    return RedirectToAction("ProyectosRealizar");
+                }
             }
             return View ();
         }   
