@@ -28,7 +28,7 @@
                     Comentario
                 </th>
                 <th scope="col">
-                    Accion
+
                 </th>
         </tr>
     </thead>
@@ -42,9 +42,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.comentario)
                 </td>
+                @if(User.Identity.IsAuthenticated){
                 <td>
                     <a asp-action="EliminarComentario" asp-route-id="@item.id"><button type="button" class="btn btn-danger">Eliminar Comentario</button></a>
                 </td>
+                }
             </tr>
         }
     </tbody>
