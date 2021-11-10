@@ -46,6 +46,15 @@ namespace Estudio.Controllers
             return RedirectToAction("MostrarComentarios");
         }
 
+        public IActionResult EliminarComentario(int id){
+            var comentario = _context.Comentarios.Find(id);
+            _context.Remove(comentario);
+            _context.SaveChanges();
+            TempData["mensaje"] = "El mensaje se ha elimnado correctamente";
+
+            
+            return RedirectToAction("MostrarComentarios");
+        }
         
 
     }

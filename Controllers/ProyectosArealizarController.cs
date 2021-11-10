@@ -128,6 +128,21 @@ namespace Estudio.Controllers
 
             return View(proyecto);
         }
-     
+
+        public IActionResult EliminarProyecto(int id){
+            var proyecto = _context.Proyectos.Find(id);
+            _context.Remove(proyecto);
+            _context.SaveChanges();
+            TempData["mensaje"] = "El proyecto se ha elimnado correctamente";
+
+            if(proyecto.estado == "Terminado"){
+            return RedirectToAction("ProyectosRealizados");
+            }
+            return RedirectToAction("ProyectosRealizar");
+        }
+
+
     }
+
+    
 }

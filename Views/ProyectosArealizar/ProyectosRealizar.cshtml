@@ -57,7 +57,9 @@
                   }else{
                     <a asp-action="EditarProyectoRealizar" asp-route-id="@item.id"><button type="button" class="btn btn-info">Editar Proyecto</button></a>
                     <a asp-action="Caracteristicas" asp-route-id="@item.id"><button type="button" class="btn btn-info">Caracteristicas</button></a>
-                    
+                    <br>
+                    <br>
+                    <a asp-action="EliminarProyecto" asp-route-id="@item.id"><button type="button" class="btn btn-danger">Eliminar Proyecto</button></a>
                   }
                  </div> 
                 </div>              

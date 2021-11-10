@@ -27,6 +27,9 @@
                 <th scope="col">
                     Comentario
                 </th>
+                <th scope="col">
+                    Accion
+                </th>
         </tr>
     </thead>
     <tbody>
@@ -38,6 +41,9 @@
                 </th>
                 <td>
                     @Html.DisplayFor(modelItem => item.comentario)
+                </td>
+                <td>
+                    <a asp-action="EliminarComentario" asp-route-id="@item.id"><button type="button" class="btn btn-danger">Eliminar Comentario</button></a>
                 </td>
             </tr>
         }
